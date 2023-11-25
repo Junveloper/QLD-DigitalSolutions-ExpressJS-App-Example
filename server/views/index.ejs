@@ -95,8 +95,8 @@
 				<ul class="space-y-4">
 					<ul>
 						<% books.forEach(book => { %>
-						<li class="flex justify-between items-center border p-2">
-							<div>
+						<li class="flex flex-col border p-2 space-y-7">
+							<div class="flex space-x-2 items-center">
 								<p class="text-lg font-semibold"><%= book.title %></p>
 								<p><%= book.published_year %></p>
 								<p>
