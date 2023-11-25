@@ -1,11 +1,14 @@
 # ExpressJS SQLite Boiler Template
 
-This example is built to show how ExpressJS can be used to teach QLD SATE Digital Solutions. 
+This example is built to show how ExpressJS can be used to teach QLD SATE Digital Solutions.
 
-PHP is a great option and widely used language with popular frameworks like Laravel or Symfony in the industry. But, teaching PHP only to create and interact with the backend is an unnecessary overhead for students.
+PHP is a great option and a widely used language with popular frameworks like Laravel or Symfony in the industry. However, teaching PHP only to create and interact with the backend is an unnecessary overhead for students.
 
-If students already have a prior knowledge on Javascript, sticking with Javascript, by using ExpressJS, for the backend can be an excellent way to remove that overhead. ExpressJS is also a very popular framework in the web development space and up-to-date technology stack.
+If students already have prior knowledge of Javascript, sticking with Javascript by using ExpressJS for the backend can be an excellent way to remove that overhead. ExpressJS is also a very popular framework in the web development space and is part of an up-to-date technology stack.
 
+## Personal Disclaimer
+
+There are smelly code in here - use them as opportunities to explore them with your students.
 
 ## Node Packages installed on this repository
 
@@ -36,3 +39,9 @@ npm install
 npm run start
 
 4. Open your browser and navigate to http://localhost:3000 to view the app
+
+<img width="679" alt="image" src="https://github.com/Junveloper/QLD-DigitalSolutions-ExpressJS-App-Example/assets/55792006/fdef6c0e-c30d-4522-ad88-807e942c7af3">
+<img width="706" alt="image" src="https://github.com/Junveloper/QLD-DigitalSolutions-ExpressJS-App-Example/assets/55792006/1b8fc675-5b27-4061-8e88-7c7fdabf7bd7">
+<img width="709" alt="image" src="https://github.com/Junveloper/QLD-DigitalSolutions-ExpressJS-App-Example/assets/55792006/436a79d6-9493-4199-b04e-500d00a7dd1d">
+
+
