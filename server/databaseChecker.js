@@ -49,8 +49,9 @@ export const checkOrInitialiseThenReturnDatabase = async () => {
                 `;
 				}
 				await databaseClient.exec(createTableQuery);
+			} else {
+				console.log(`Table ${tableName} exists. Checking the next table.`);
 			}
-			console.log(`Table ${tableName} exists. Checking the next table.`);
 		}
 
 		return databaseClient;

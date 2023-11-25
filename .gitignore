@@ -1,2 +1,3 @@
 server/database
 node_modules
+*.db
