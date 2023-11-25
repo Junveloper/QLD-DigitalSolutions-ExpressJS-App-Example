@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Authors Page</title>
+	</head>
+	<body class="h-screen w-screen flex justify-center items-center">
+		<div class="w-1/2">
+			<%- include("components/nav") %>
+			<form action="/create/genre" method="POST" class="space-y-4">
+				<div>
+					<label
+						for="name"
+						class="block text-sm font-medium text-gray-600"
+					>
+						Genre Name
+					</label>
+					<input
+						id="name"
+						name="name"
+						type="text"
+						class="mt-1 p-2 w-full border rounded-md"
+						required
+					/>
+				</div>
+				<button
+					type="submit"
+					class="px-4 py-2 bg-blue-600 text-white w-full rounded-md"
+				>
+					Create Genre
+				</button>
+			</form>
+			<hr class="w-full border-2 my-3" />
+			<div>
+				<h1>Currently Registered Genres</h1>
+				<ul class="space-y-4">
+					<% genres.forEach(genre => { %>
+					<li class="flex justify-between items-center">
+						<div>
+							<p class="text-lg font-semibold"><%= genre.name %></p>
+						</div>
+						<div>
+							<form action="/delete/genre/<%= genre.id %>" method="POST">
+								<button
+									type="submit"
+									class="px-4 py-2 bg-red-600 text-white rounded-md"
+								>
+									Delete
+								</button>
+							</form>
+						</div>
+					</li>
+					<% }) %>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

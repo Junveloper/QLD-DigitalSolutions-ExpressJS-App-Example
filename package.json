@@ -1,0 +1,21 @@
+{
+	"name": "bookdb",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server/app.js",
+	"scripts": {
+		"start": "nodemon server/app.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"ejs": "^3.1.9",
+		"express": "^4.18.2",
+		"sqlite": "^5.0.1",
+		"sqlite3": "^5.1.6"
+	},
+	"type": "module",
+	"devDependencies": {
+		"nodemon": "^3.0.1"
+	}
+}

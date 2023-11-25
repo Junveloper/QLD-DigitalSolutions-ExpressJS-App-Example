@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Books</title>
+	</head>
+	<body class="h-screen w-screen flex justify-center items-center">
+		<div class="w-1/2">
+			<%- include('components/nav') %>
+
+			<form action="/create/book" method="post" class="space-y-4">
+				<div>
+					<label for="title" class="block">Book Title:</label>
+					<input
+						type="text"
+						id="title"
+						name="title"
+						class="border rounded p-2 w-full"
+						required
+					/>
+				</div>
+
+				<div>
+					<label for="genre" class="block">Genre:</label>
+					<select
+						id="genre"
+						name="genre"
+						class="border rounded p-2 w-full"
+						required
+					>
+						<option>---Choose a Genre---</option>
+						<% genres.forEach(genre => { %>
+						<option value="<%= genre.id %>"><%= genre.name %></option>
+						<% }) %>
+					</select>
+				</div>
+
+				<div>
+					<label for="author" class="block">Author:</label>
+					<select
+						id="author"
+						name="author"
+						class="border rounded p-2 w-full"
+						required
+					>
+						<option>---Choose an Author---</option>
+						<% authors.forEach(author => { %>
+						<option value="<%= author.id %>">
+							<%= author.first_name %> <%= author.last_name %>
+						</option>
+						<% }) %>
+					</select>
+				</div>
+
+				<div>
+					<label
+						for="published_year"
+						class="block text-sm font-medium text-gray-600"
+						>Published Year</label
+					>
+					<input
+						id="published_year"
+						name="published_year"
+						type="number"
+						class="mt-1 p-2 w-full border rounded-md"
+						required
+					/>
+				</div>
+
+				<div>
+					<label
+						for="summary"
+						class="block text-sm font-medium text-gray-600"
+						>Summary</label
+					>
+					<textarea
+						id="aummary"
+						name="summary"
+						title="You can enter the summary of the book"
+						class="mt-1 p-2 w-full border rounded-md"
+					></textarea>
+				</div>
+
+				<button
+					type="submit"
+					class="px-4 py-2 bg-blue-600 text-white w-full rounded-md"
+				>
+					Submit
+				</button>
+			</form>
+			<div class="my-9">
+				<h1>Currently Registered Books</h1>
+				<ul class="space-y-4">
+					<ul>
+						<% books.forEach(book => { %>
+						<li class="flex justify-between items-center border p-2">
+							<div>
+								<p class="text-lg font-semibold"><%= book.title %></p>
+								<p><%= book.published_year %></p>
+								<p>
+									<%= book.author_first_name %> <%=
+									book.author_last_name %>
+								</p>
+								<p><%= book.genre_name %></p>
+							</div>
+							<div><%= book.summary %></div>
+							<div>
+								<form
+									action="/delete/book/<%= book.id %>"
+									method="POST"
+								>
+									<button
+										type="submit"
+										class="px-4 py-2 bg-red-600 text-white rounded-md"
+									>
+										Delete
+									</button>
+								</form>
+							</div>
+						</li>
+						<% }) %>
+					</ul>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
